@@ -18,6 +18,18 @@ const Chart = ({ data, country }) => {
 
   const lineChart = dailyData.length ? (
     <Line
+      options={{
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+      }}
       data={{
         labels: dailyData.map(({ date }) => new Date(date).toDateString()),
         datasets: [
@@ -49,7 +61,9 @@ const Chart = ({ data, country }) => {
   );
 
   return (
-    <div className={styles.container}>{country ? lineChart : lineChart}</div>
+    <div className={styles.container}>
+      <div className={styles.canvasContainer}>{lineChart}</div>
+    </div>
   );
 };
 

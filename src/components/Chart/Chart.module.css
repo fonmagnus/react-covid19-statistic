@@ -4,3 +4,8 @@
   width: 85%;
   min-height: 70vh;
 }
+
+.canvasContainer {
+  min-height: 40vh;
+  width: 85vw;
+}
